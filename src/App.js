@@ -1,11 +1,8 @@
-import Card from './Card'
+import TodoList from "./TodoList";
 
 function App() {
-  return (
-    <>
-    <h1>Hello this is an starting page</h1>
-    <Card />
-    </>
+  return ( <
+    TodoList / >
   );
 }
 
