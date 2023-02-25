@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function TodoList() {
+function TodoList(props) {
   const [todoItems, setTodoItems] = useState([]);
   const [task, setTask] = useState("Add New Task");
   const [warning, setWarning] = useState("");
@@ -34,6 +34,7 @@ function TodoList() {
 
   return (
     <div>
+    <h1>{props.title}</h1>
       <ul>
         {todoItems.map((item) => (
           <li key={item}>{item}</li>

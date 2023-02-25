@@ -1,8 +1,10 @@
 import TodoList from "./TodoList";
 
 function App() {
-  return ( <
-    TodoList / >
+  return ( 
+    <>
+  <TodoList title = "My ToDo"/ >
+    </>
   );
 }
 
