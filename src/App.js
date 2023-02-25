@@ -1,10 +1,11 @@
-import TodoList from "./TodoList";
+import React from "react";
+import Todo from "./Todo";
 
 function App() {
-  return ( 
-    <>
-  <TodoList title = "My ToDo"/ >
-    </>
+  return (
+    <div>
+      <Todo/>
+    </div>
   );
 }
 
