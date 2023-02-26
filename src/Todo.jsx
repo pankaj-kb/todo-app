@@ -15,8 +15,8 @@ function Todo() {
     }
 
     if (todoItems.includes(task)) {
-        setWarning("This task already exists.");
-        return;
+      setWarning("This task already exists.");
+      return;
     }
     setTodoItems([...todoItems, task]);
     setTask("");
@@ -54,11 +54,10 @@ function Todo() {
   };
 
   const handleDeleteClick = (index) => {
-  const newTodoItems = [...todoItems];
-  newTodoItems.splice(index, 1);
-  setTodoItems(newTodoItems);
-};
-
+    const newTodoItems = [...todoItems];
+    newTodoItems.splice(index, 1);
+    setTodoItems(newTodoItems);
+  };
 
   const handleEditSubmit = (event, index) => {
     event.preventDefault();
@@ -72,16 +71,14 @@ function Todo() {
 
   return (
     <div>
-      <h1
-        contentEditable="true"
-        onBlur={handleTitleChange}
-        style={{ borderBottom: "1px solid #ddd" }}
-      >
-        {listTitle}
-      </h1>
+      <h1 contentEditable="true" onBlur={handleTitleChange}>
+        {listTitle}{" "}
+      </h1>{" "}
       <ul>
+        {" "}
         {todoItems.map((item, index) => (
           <li key={index}>
+            {" "}
             {editIndex === index ? (
               <form onSubmit={(event) => handleEditSubmit(event, index)}>
                 <input
@@ -90,33 +87,35 @@ function Todo() {
                   defaultValue={item}
                   autoFocus
                 />
-                <button type="submit">Save</button>
+                <button type="submit"> Save </button>{" "}
                 <button type="button" onClick={handleCancelClick}>
-                  Cancel
-                </button>
+                  Cancel{" "}
+                </button>{" "}
               </form>
             ) : (
               <div>
-                <span>{item}</span>
+                <span> {item} </span>{" "}
                 <button type="button" onClick={() => handleEditClick(index)}>
-                  Edit
-                </button>
-                <button type="button" onClick={() => handleDeleteClick(index)}>Delete Task</button>
+                  Edit{" "}
+                </button>{" "}
+                <button type="button" onClick={() => handleDeleteClick(index)}>
+                  {" "}
+                  Delete Task{" "}
+                </button>{" "}
               </div>
-            )}
+            )}{" "}
           </li>
-        ))}
-      </ul>
+        ))}{" "}
+      </ul>{" "}
       <input
         type="text"
         value={task}
         onChange={(e) => setTask(e.target.value)}
-      />
-      <button onClick={addTask}>Add Task</button>
-      {warning && <p>{warning}</p>}
+      />{" "}
+      <button onClick={addTask}> Add Task </button>{" "}
+      {warning && <p> {warning} </p>}{" "}
     </div>
   );
 }
-
 
 export default Todo;
