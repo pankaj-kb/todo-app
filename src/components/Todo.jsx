@@ -71,9 +71,7 @@ function Todo() {
 
   return (
     <div>
-      <h1 contentEditable="true" onBlur={handleTitleChange}>
-        {listTitle}{" "}
-      </h1>{" "}
+      <h1 contentEditable="true" onBlur={handleTitleChange}> {listTitle} {" "}</h1>{" "}
       <ul>
         {" "}
         {todoItems.map((item, index) => (
