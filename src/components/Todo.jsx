@@ -70,7 +70,7 @@ function Todo() {
   };
 
   return (
-    <div>
+    <div className="todoArea">
       <h1 className="text-3xl font-bold underline" contentEditable="true" onBlur={handleTitleChange}> {listTitle} {" "}</h1>{" "}
       <ul>
         {" "}
