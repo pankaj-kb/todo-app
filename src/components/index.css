@@ -9,17 +9,29 @@
     box-sizing: border-box;
 }
 
+
+/* 
+.mainDiv {
+    background-color: blue;
+} */
+
+
 body {
-    background-color: #F0EFE9;
+    background-color: #29CE94;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .todoArea {
-    background-color: #FFFFFF;
-    height: 500px;
-    width: 500px;
-    border-radius: 30px;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vh;
+    border: 2px solid #29CE94;
+    border-radius: 40px;
 }
-

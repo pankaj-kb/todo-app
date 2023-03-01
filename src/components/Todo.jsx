@@ -71,7 +71,7 @@ function Todo() {
 
   return (
     <div className="todoArea">
-      <h1 className="text-3xl font-bold underline" contentEditable="true" onBlur={handleTitleChange}> {listTitle} {" "}</h1>{" "}
+      <h1 contentEditable="true" onBlur={handleTitleChange}> {listTitle} {" "}</h1>{" "}
       <ul>
         {" "}
         {todoItems.map((item, index) => (
