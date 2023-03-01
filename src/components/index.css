@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
 * {
     margin: 0px;
     padding: 0px;
     border: 0px;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 
@@ -34,4 +38,12 @@ body {
     width: 50vh;
     border: 2px solid #29CE94;
     border-radius: 40px;
+}
+
+.listTitle {
+    font-size: 50px;
+    font-weight: 800;
+    color: #0F0E10;
+    position: relative;
+    top: -15vh;
 }
