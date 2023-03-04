@@ -71,47 +71,62 @@ function Todo() {
 
   return (
     <div className="todoArea">
-      <h1 className="listTitle" contentEditable="true" onBlur={handleTitleChange}> {listTitle} {" "}</h1>{" "}
-      <ul>
+      <h1
+        className="listTitle"
+        contentEditable="true"
+        onBlur={handleTitleChange}
+      >
         {" "}
-        {todoItems.map((item, index) => (
-          <li key={index}>
-            {" "}
-            {editIndex === index ? (
-              <form onSubmit={(event) => handleEditSubmit(event, index)}>
-                <input
-                  type="text"
-                  name="editTask"
-                  defaultValue={item}
-                  autoFocus
-                />
-                <button type="submit"> Save </button>{" "}
-                <button type="button" onClick={handleCancelClick}>
-                  Cancel{" "}
-                </button>{" "}
-              </form>
-            ) : (
-              <div>
-                <span> {item} </span>{" "}
-                <button type="button" onClick={() => handleEditClick(index)}>
-                  Edit{" "}
-                </button>{" "}
-                <button type="button" onClick={() => handleDeleteClick(index)}>
-                  {" "}
-                  Delete Task{" "}
-                </button>{" "}
-              </div>
-            )}{" "}
-          </li>
-        ))}{" "}
-      </ul>{" "}
-      <input
-        type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-      />{" "}
-      <button onClick={addTask}> Add Task </button>{" "}
-      {warning && <p> {warning} </p>}{" "}
+        {listTitle}{" "}
+      </h1>{" "}
+      <div className="todoList">
+        <ul>
+          {" "}
+          {todoItems.map((item, index) => (
+            <li key={index}>
+              {" "}
+              {editIndex === index ? (
+                <form onSubmit={(event) => handleEditSubmit(event, index)}>
+                  <input
+                    type="text"
+                    name="editTask"
+                    defaultValue={item}
+                    autoFocus
+                  />
+                  <button type="submit"> Save </button>{" "}
+                  <button type="button" onClick={handleCancelClick}>
+                    Cancel{" "}
+                  </button>{" "}
+                </form>
+              ) : (
+                <div>
+                  <span> {item} </span>{" "}
+                  <button type="button" onClick={() => handleEditClick(index)}>
+                    Edit{" "}
+                  </button>{" "}
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteClick(index)}
+                  >
+                    {" "}
+                    Delete Task{" "}
+                  </button>{" "}
+                </div>
+              )}{" "}
+            </li>
+          ))}{" "}
+        </ul>
+      </div>
+      <div className="addTaskArea">
+        {" "}
+        <input
+          type="text"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+        />{" "}
+        <button onClick={addTask}> Add Task </button>{" "}
+        {warning && <p> {warning} </p>}{" "}
+      </div>
     </div>
   );
 }
